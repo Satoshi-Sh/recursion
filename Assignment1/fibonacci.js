@@ -33,12 +33,16 @@ function fib (n){
     return n<=1 ? n: fib(n-1) +fib(n-2)
 }
 function fibsRec(num){
-  let ls = []
-  for (let i=0;i <num;i++){
-    ls.push(fib(i))
+  if (num==0){
+    return [0]
   }
-  return ls
+  else if (num==1){
+    return [0,1]
+  }
+  else{
+    return [...fibsRec(num-1),fib(num-1)]
+  }
 }
 
-
-console.log(fibsRec(8))
+//test
+//console.log(fibsRec(8))
